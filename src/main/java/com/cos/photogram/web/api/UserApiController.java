@@ -17,7 +17,7 @@ public class UserApiController {
 
     private final UserService userService;
 
-    @PutMapping("/api/user/{id")
+    @PutMapping("/api/user/{id}")
     public CMRespDto<?> update(@PathVariable int id, UserUpdateDto userUpdateDto, @AuthenticationPrincipal PrincipalDetails principalDetails) {
         User userEntity = userService.editUser(id, userUpdateDto.toEntity());
         principalDetails.setUser(userEntity);

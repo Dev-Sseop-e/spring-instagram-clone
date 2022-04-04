@@ -11,8 +11,9 @@ function update(userId, event) {
         dataType: "json"
     }).done(res => {
         location.href='/user/${userId}'
+        console.log("success")
     }).fail(error => {
-
+        console.log("fail")
     });
 
 }
