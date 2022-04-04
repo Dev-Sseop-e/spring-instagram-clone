@@ -18,7 +18,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-
         http.csrf().disable();
         http.authorizeRequests()
                 .antMatchers("/", "/user/**", "/image/**", "/subscribe/**", "/comment/**").authenticated()
@@ -27,7 +26,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .loginPage("/auth/signin")
                 .defaultSuccessUrl("/");
-
     }
 
 }

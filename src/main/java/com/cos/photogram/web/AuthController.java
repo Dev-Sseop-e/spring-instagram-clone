@@ -27,12 +27,10 @@ public class AuthController {
 
     @PostMapping("/auth/signup")
     public String signup(SignupDto signupDto) {
-
         User user = signupDto.toEntity();
-        User userEntity = authService.signUpService(user);
+        User userEntity = authService.signupService(user);
         System.out.println(userEntity);
         return "auth/signin";
-
     }
 
 }
