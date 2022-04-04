@@ -1,12 +1,14 @@
 package com.cos.photogram.domain.user;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -17,6 +19,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Strategy of increasing number follow the DB
     private int id;
 
+    @Column(unique = true)
     private String username;
     private String password;
 
