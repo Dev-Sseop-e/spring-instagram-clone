@@ -39,7 +39,7 @@ public class User {
 
     private LocalDateTime createDate;
 
-    @PrePersist
+    @PrePersist // Executed before inserting db
     public void createDate() {
         this.createDate = LocalDateTime.now();
     }
