@@ -21,13 +21,13 @@ public class SubscribeApiController {
     @PostMapping("/api/subscribe/{toUserId}")
     public ResponseEntity<?> subscribe(@AuthenticationPrincipal PrincipalDetails principalDetails, @PathVariable int toUserId) {
         subscribeService.sub(principalDetails.getUser().getId(), toUserId);
-        return new ResponseEntity<>(new CMRespDto<>(1, "Subscribe successfully", null), HttpStatus.OK);
+        return new ResponseEntity<>(new CMRespDto<>(1, "Subscription success", null), HttpStatus.OK);
     }
 
     @DeleteMapping("/api/subscribe/{toUserId}")
     public ResponseEntity<?> unSubscribe(@AuthenticationPrincipal PrincipalDetails principalDetails, @PathVariable int toUserId) {
         subscribeService.unSub(principalDetails.getUser().getId(), toUserId);
-        return new ResponseEntity<>(new CMRespDto<>(1, "Unsubscribe successfully", null), HttpStatus.OK);
+        return new ResponseEntity<>(new CMRespDto<>(1, "Unsubscription success", null), HttpStatus.OK);
     }
 
 }
