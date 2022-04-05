@@ -2,10 +2,13 @@ package com.cos.photogram.service;
 
 import com.cos.photogram.domain.user.User;
 import com.cos.photogram.domain.user.UserRepository;
+import com.cos.photogram.handler.ex.CustomValidationApiException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.function.Supplier;
 
 @RequiredArgsConstructor
 @Service
@@ -17,7 +20,9 @@ public class UserService {
     @Transactional
     public User editUser(int id, User user) {
         // 1. Persistence
-        User userEntity = userRepository.findById(id).get();
+        User userEntity = userRepository.findById(id).orElseThrow(() -> {
+            return new CustomValidationApiException("Connot find your id");
+        });
 
         // 2. Edit object - Dirty checking(update finished)
         userEntity.setName(user.getName());
