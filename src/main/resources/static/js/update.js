@@ -1,19 +1,19 @@
 // (1) 회원정보 수정
-function update(userId, event) {
+function update(userId) {
 
     let data = $("#profileUpdate").serialize();
 
     $.ajax({
         type: "put",
-        url: "/api/user/${userId}",
+        url: `/api/user/${userId}`,
         data: data,
         contentType: "application/x-www-form-urlencoded; charset=utf-8",
         dataType: "json"
     }).done(res => {
-        location.href='/user/${userId}'
-        console.log("success")
+        console.log("success");
+        location.href=`/user/${userId}`;
     }).fail(error => {
-        console.log("fail")
+        console.log("fail");
     });
 
 }
