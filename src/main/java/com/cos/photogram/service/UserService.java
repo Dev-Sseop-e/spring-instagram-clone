@@ -21,7 +21,7 @@ public class UserService {
     public User editUser(int id, User user) {
         // 1. Persistence
         User userEntity = userRepository.findById(id).orElseThrow(() -> {
-            return new CustomValidationApiException("Connot find your id");
+            return new CustomValidationApiException("Cannot find your id");
         });
 
         // 2. Edit object - Dirty checking(update finished)
