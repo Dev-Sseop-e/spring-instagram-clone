@@ -2,6 +2,7 @@ package com.cos.photogram.service;
 
 import com.cos.photogram.domain.user.User;
 import com.cos.photogram.domain.user.UserRepository;
+import com.cos.photogram.handler.ex.CustomException;
 import com.cos.photogram.handler.ex.CustomValidationApiException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -16,6 +17,13 @@ public class UserService {
 
     private final UserRepository userRepository;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
+
+    public User userProfile(int userId) {
+        User userEntity = userRepository.findById(userId).orElseThrow(() -> {
+            throw new CustomException("Profile page doesn't exist");
+        });
+        return userEntity
+    }
 
     @Transactional
     public User editUser(int id, User user) {
