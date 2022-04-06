@@ -4,6 +4,7 @@ import com.cos.photogram.domain.user.User;
 import com.cos.photogram.domain.user.UserRepository;
 import com.cos.photogram.handler.ex.CustomException;
 import com.cos.photogram.handler.ex.CustomValidationApiException;
+import com.cos.photogram.web.dto.user.UserProfileDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -19,11 +20,19 @@ public class UserService {
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Transactional(readOnly = true)
-    public User userProfile(int userId) {
-        User userEntity = userRepository.findById(userId).orElseThrow(() -> {
+    public UserProfileDto userProfile(int pageUserId, int principalId) {
+
+        UserProfileDto dto = new UserProfileDto();
+
+        User userEntity = userRepository.findById(pageUserId).orElseThrow(() -> {
             throw new CustomException("Profile page doesn't exist");
         });
-        return userEntity;
+
+        dto.setUser(userEntity);
+        dto.setPageOwnerState(pageUserId == principalId);
+        dto.setImageCount(userEntity.getImages().size());
+
+        return dto;
     }
 
     @Transactional
