@@ -1,10 +1,20 @@
 package com.cos.photogram.web;
 
+import com.cos.photogram.config.auth.PrincipalDetails;
+import com.cos.photogram.handler.ex.CustomValidationException;
+import com.cos.photogram.service.ImageService;
+import com.cos.photogram.web.dto.image.ImageUploadDto;
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
+@RequiredArgsConstructor
 @Controller
 public class ImageController {
+
+    private final ImageService imageService;
 
     @GetMapping({"/", "/image/story"})
     public String story() {
@@ -19,6 +29,18 @@ public class ImageController {
     @GetMapping("/image/upload")
     public String upload() {
         return "image/upload";
+    }
+
+    @PostMapping("/image")
+    public String imageUpload(ImageUploadDto imageUploadDto, @AuthenticationPrincipal PrincipalDetails principalDetails) {
+
+        if (imageUploadDto.getFile().isEmpty()) {
+            throw new CustomValidationException("Image not uploaded", null);
+        }
+
+        imageService.imageUpload(imageUploadDto, principalDetails);
+        return "redirect:/user/" + principalDetails.getUser().getId();
+
     }
 
 }
