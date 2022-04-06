@@ -22,7 +22,7 @@ public class UserService {
         User userEntity = userRepository.findById(userId).orElseThrow(() -> {
             throw new CustomException("Profile page doesn't exist");
         });
-        return userEntity
+        return userEntity;
     }
 
     @Transactional
