@@ -18,6 +18,7 @@ public class UserService {
     private final UserRepository userRepository;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
+    @Transactional(readOnly = true)
     public User userProfile(int userId) {
         User userEntity = userRepository.findById(userId).orElseThrow(() -> {
             throw new CustomException("Profile page doesn't exist");

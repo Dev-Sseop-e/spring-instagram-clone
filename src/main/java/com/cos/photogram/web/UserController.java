@@ -25,7 +25,7 @@ public class UserController {
 
     @GetMapping("/user/{id}/update")
     public String update(@PathVariable int id, @AuthenticationPrincipal PrincipalDetails principalDetails) {
-        System.out.println("Session information:" + principalDetails.getUser());
+//        System.out.println("Session information:" + principalDetails.getUser());
         return "user/update";
     }
 
