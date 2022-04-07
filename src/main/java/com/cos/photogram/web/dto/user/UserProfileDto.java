@@ -16,6 +16,4 @@ public class UserProfileDto {
     private int imageCount;
     private User user;
 
-
-
 }
