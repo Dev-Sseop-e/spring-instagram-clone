@@ -1,7 +1,7 @@
-package com.cos.photogram.domain.image;
+package com.cos.photogram.domain.likes;
 
+import com.cos.photogram.domain.image.Image;
 import com.cos.photogram.domain.user.User;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,17 +15,25 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Data
 @Entity
-public class Image {
-
+@Table(
+        uniqueConstraints = {
+                @UniqueConstraint(
+                        name="likes_uk",
+                        columnNames = {"imageId", "userId"}
+                )
+        }
+)
+public class Likes {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String caption;
-    private String postImageUrl; // Image will be saved as folder in server - insert path in DB
 
-    @JsonIgnoreProperties({"images"})
+    @JoinColumn(name="imageId")
+    @ManyToOne
+    private Image image;
+
     @JoinColumn(name="userId")
-    @ManyToOne(fetch=FetchType.EAGER)
+    @ManyToOne
     private User user;
 
     private LocalDateTime createDate;
@@ -34,5 +42,7 @@ public class Image {
     public void createDate() {
         this.createDate = LocalDateTime.now();
     }
+
+
 
 }

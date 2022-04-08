@@ -14,7 +14,7 @@
 function toggleSubscribe(toUserId, obj) {
 	if ($(obj).text() === "Unfollow") {
 		$.ajax({
-			type: "post",
+			type: "delete",
 			url: "/api/subscribe/" + toUserId,
 			dataType: "json"
 		}).done(res => {
@@ -24,7 +24,7 @@ function toggleSubscribe(toUserId, obj) {
 		});
 	} else {
 		$.ajax({
-			type: "delete",
+			type: "post",
 			url: "/api/subscribe/" + toUserId,
 			dataType: "json"
 		}).done(res => {
@@ -55,13 +55,13 @@ function subscribeInfoModalOpen(pageUserId) {
 
 function getSubscribeModalItem(u) {
 	let item = `<div class="subscribe__item" id="subscribeModalItem-${u.id}">
-\t<div class="subscribe__img">
-\t\t<img src="/upload/${u.profileImageUrl}" onerror="this.src='/images/person.jpeg'"/>
-\t</div>
-\t<div class="subscribe__text">
-\t\t<h2>${u.username}</h2>
-\t</div>
-\t<div class="subscribe__btn">`;
+	<div class="subscribe__img">
+		<img src="/upload/${u.profileImageUrl}" onerror="this.src='/images/person.jpeg'"/>
+	</div>
+	<div class="subscribe__text">
+		<h2>${u.username}</h2>
+	</div>
+	<div class="subscribe__btn">`;
 	if(!u.equalUserState) {
 		if(u.subscribeState) {
 			item += `\t\t<button class="cta" onclick="toggleSubscribe(${u.id}, this)">Unfollow</button>`;
@@ -70,7 +70,7 @@ function getSubscribeModalItem(u) {
 		}
 	}
 	item += `
-\t</div>
+	</div>
 </div>`;
 	return item;
 }
