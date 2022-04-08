@@ -37,7 +37,7 @@ public class UserApiController {
 
         List<SubscribeDto> subscribeDto = subscribeService.subscribeList(principalDetails.getUser().getId(), pageUserId);
 
-        return ResponseEntity<>(new CMRespDto<>(1, "Information list call success", subscribeDto), HttpStatus.OK);
+        return new ResponseEntity<>(new CMRespDto<>(1, "Information list call success", subscribeDto), HttpStatus.OK);
 
     }
 

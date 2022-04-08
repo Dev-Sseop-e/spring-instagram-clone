@@ -18,3 +18,4 @@ public class SubscribeDto {
     private Integer equalUserState;
 
 }
+
