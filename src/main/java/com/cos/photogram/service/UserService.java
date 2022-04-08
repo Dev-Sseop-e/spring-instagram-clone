@@ -41,10 +41,12 @@ public class UserService {
         dto.setSubscribeCount(subscribeCount);
 
         return dto;
+
     }
 
     @Transactional
     public User editUser(int id, User user) {
+
         // 1. Persistence
         User userEntity = userRepository.findById(id).orElseThrow(() -> {
             return new CustomValidationApiException("Cannot find your id");
@@ -63,6 +65,7 @@ public class UserService {
         userEntity.setGender(user.getGender());
 
         return userEntity;
+
     }
 
 }
