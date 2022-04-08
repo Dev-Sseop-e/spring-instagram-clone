@@ -24,6 +24,7 @@ import java.time.LocalDateTime;
         }
 )
 public class Likes {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -42,7 +43,5 @@ public class Likes {
     public void createDate() {
         this.createDate = LocalDateTime.now();
     }
-
-
 
 }
