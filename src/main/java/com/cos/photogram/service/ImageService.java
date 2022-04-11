@@ -24,6 +24,11 @@ public class ImageService {
     private final ImageRepository imageRepository;
 
     @Transactional(readOnly = true)
+    public List<Image> popFig() {
+        return imageRepository.mPopular();
+    }
+
+    @Transactional(readOnly = true)
     public Page<Image> imageStory(int principalId, Pageable pageable) {
         Page<Image> images = imageRepository.mStory(principalId, pageable);
 
