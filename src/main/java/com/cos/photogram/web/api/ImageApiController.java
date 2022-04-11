@@ -33,13 +33,13 @@ public class ImageApiController {
 
     @PostMapping("/api/image/{imageId}/likes")
     public ResponseEntity<?> likes(@PathVariable int imageId, @AuthenticationPrincipal PrincipalDetails principalDetails) {
-        likesService.like(imageId, principalDetails.getUser().getId);
+        likesService.like(imageId, principalDetails.getUser().getId());
         return new ResponseEntity<>(new CMRespDto<>(1, "Like Success", null), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/api/image/{imageId}/likes")
     public ResponseEntity<?> unLikes(@PathVariable int imageId, @AuthenticationPrincipal PrincipalDetails principalDetails) {
-        likesService.unLike(imageId, principalDetails.getUser().getId);
+        likesService.unLike(imageId, principalDetails.getUser().getId());
         return new ResponseEntity<>(new CMRespDto<>(1, "Unlike success", null), HttpStatus.CREATED);
     }
 

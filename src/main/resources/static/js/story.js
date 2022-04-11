@@ -100,7 +100,6 @@ function toggleLike(imageId) {
 	let likeIcon = $(`#storyLikeIcon-${imageId}`);
 
 	if (likeIcon.hasClass("far")) {
-
 		$.ajax({
 			type: "post",
 			url: `/api/image/${imageId}/likes`,
@@ -116,7 +115,6 @@ function toggleLike(imageId) {
 		}).fail(error => {
 			console.log("error", error);
 		});
-
 	} else {
 		$.ajax({
 			type: "delete",
@@ -134,7 +132,6 @@ function toggleLike(imageId) {
 			console.log("error", error);
 		});
 	}
-
 }
 
 // (4) 댓글쓰기
