@@ -43,7 +43,7 @@ function getStoryItem(image) {
 		<div class="sl__item__contents__icon">
 
 			<button>
-				<i class="fas fa-heart active" id="storyLikeIcon-1" onclick="toggleLike()"></i>
+				<i class="fas fa-heart active" id="storyLikeIcon-${image.id}" onclick="toggleLike(${image.id})"></i>
 			</button>
 		</div>
 
@@ -80,7 +80,7 @@ function getStoryItem(image) {
 
 // (2) 스토리 스크롤 페이징하기
 $(window).scroll(() => {
-	let checkNum = $(window).scrollTop() - ($(document).height() - $(window).height() );
+	let checkNum = $(window).scrollTop() - ($(document).height() - $(window).height());
 
 	if(checkNum < 1 && checkNum > -1) {
 		page++;
