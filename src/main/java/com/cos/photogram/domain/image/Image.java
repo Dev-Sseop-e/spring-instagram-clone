@@ -1,5 +1,6 @@
 package com.cos.photogram.domain.image;
 
+import com.cos.photogram.domain.likes.Likes;
 import com.cos.photogram.domain.user.User;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
@@ -9,6 +10,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Builder
 @AllArgsConstructor
@@ -27,6 +29,16 @@ public class Image {
     @JoinColumn(name="userId")
     @ManyToOne(fetch=FetchType.EAGER)
     private User user;
+
+    @JsonIgnoreProperties({"images"})
+    @OneToMany(mappedBy = "image")
+    private List<Likes> likes;
+
+    @Transient // Do not make column in DB
+    private boolean likeState;
+
+    @Transient
+    private int likeCount;
 
     private LocalDateTime createDate;
 
