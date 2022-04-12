@@ -26,14 +26,6 @@ public class CommentApiController {
 
     @PostMapping("/api/comment")
     public ResponseEntity<?> commentSave(@Valid @RequestBody CommentDto commentDto, BindingResult bindingResult, @AuthenticationPrincipal PrincipalDetails principalDetails) {
-        if (bindingResult.hasErrors()) {
-            Map<String, String> errorMap = new HashMap<>();
-            for (FieldError error : bindingResult.getFieldErrors()) {
-                errorMap.put(error.getField(), error.getDefaultMessage());
-            }
-            throw new CustomValidationApiException("Validation check failed", errorMap);
-        }
-
         Comment comment = commentService.addCmt(commentDto.getContent(), commentDto.getImageId(), principalDetails.getUser().getId());
         return new ResponseEntity<>(new CMRespDto<>(1, "adding comment success", comment), HttpStatus.CREATED);
     }

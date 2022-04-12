@@ -55,17 +55,9 @@ public class UserApiController {
                                BindingResult bindingResult, // Next to the @Valid parameter
                                @AuthenticationPrincipal PrincipalDetails principalDetails) {
 
-        if (bindingResult.hasErrors()) {
-            Map<String, String> errorMap = new HashMap<>();
-            for (FieldError error : bindingResult.getFieldErrors()) {
-                errorMap.put(error.getField(), error.getDefaultMessage());
-            }
-            throw new CustomValidationApiException("Validation check failed", errorMap);
-        } else {
-            User userEntity = userService.editUser(id, userUpdateDto.toEntity());
-            principalDetails.setUser(userEntity);
-            return new CMRespDto<>(1, "User info edit successfully", userEntity);
-        }
+        User userEntity = userService.editUser(id, userUpdateDto.toEntity());
+        principalDetails.setUser(userEntity);
+        return new CMRespDto<>(1, "User info edit successfully", userEntity);
 
     }
 
