@@ -33,7 +33,10 @@
 </head>
 
 <body>
-	
+
+	<!-- for principalId -->
+	<input type="hidden" id="principalId" value="${principal.user.id}" />
+
 	<header class="header">
 		<div class="container">
 			<a href="/" class="logo">
