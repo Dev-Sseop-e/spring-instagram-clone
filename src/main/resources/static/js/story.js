@@ -181,7 +181,8 @@ function addComment(imageId) {
 			</div>`;
 		commentList.prepend(content);
 	}).fail(error => {
-		console.log("error", error);
+		console.log("error", error.responseJSON.data.content);
+		alert(error.responseJSON.data.content);
 	});
 
 	commentInput.val("");
