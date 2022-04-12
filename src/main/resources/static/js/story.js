@@ -9,7 +9,7 @@
  */
 
 // (0) Load currently login user id
-let principalId = ${"#principalId"}.val();
+let principalId = $("#principalId").val();
 
 // (1) 스토리 로드하기
 let page = 0;
@@ -24,7 +24,7 @@ function storyLoad() {
 			$("#storyList").append(storyItem);
 		})
 	}).fail(error => {
-		console.log("Error", error);
+		console.log("error", error);
 	});
 }
 

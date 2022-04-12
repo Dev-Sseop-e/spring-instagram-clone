@@ -37,7 +37,7 @@ public class AuthController {
     @PostMapping("/auth/signup")
     public String signup(@Valid SignupDto signupDto, BindingResult bindingResult) {
 
-        if (bindingResult.hasErrors()) {
+        if (bindingResult.hasErrors()) { // pre-processing
             Map<String, String> errorMap = new HashMap<>();
             for (FieldError error : bindingResult.getFieldErrors()) {
                 errorMap.put(error.getField(), error.getDefaultMessage());
@@ -45,8 +45,10 @@ public class AuthController {
             throw new CustomValidationException("Validation check failed", errorMap);
         } else {
             User user = signupDto.toEntity();
-            User userEntity = authService.signupService(user);
-            System.out.println(userEntity);
+            authService.signupService(user);
+            // System.out.println(userEntity);
+
+            // Remain log (post-processing)
             return "auth/signin";
         }
 

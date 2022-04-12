@@ -5,6 +5,7 @@ import com.cos.photogram.domain.image.Image;
 import com.cos.photogram.domain.image.ImageRepository;
 import com.cos.photogram.web.dto.image.ImageUploadDto;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

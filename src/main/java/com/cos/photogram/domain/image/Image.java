@@ -31,7 +31,7 @@ public class Image {
     @ManyToOne(fetch=FetchType.EAGER)
     private User user;
 
-    @JsonIgnoreProperties({"images"})
+    @JsonIgnoreProperties({"image"})
     @OneToMany(mappedBy = "image")
     private List<Likes> likes;
 
