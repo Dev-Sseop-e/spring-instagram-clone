@@ -26,7 +26,7 @@ public class CommentService {
         image.setId(imageId);
 
         User userEntity = userRepository.findById(userId).orElseThrow(() -> {
-            throw new CustomApiException("Can't fint user id");
+            throw new CustomApiException("Can't find user id");
         });
 
         Comment comment = new Comment();
