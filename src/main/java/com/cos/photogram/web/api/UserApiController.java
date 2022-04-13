@@ -36,9 +36,11 @@ public class UserApiController {
     @PutMapping("/api/user/{principalId}/profileImageUrl")
     public ResponseEntity<?> profileImageUrlUpdate(@PathVariable int principalId, MultipartFile profileImageFile,
                                                    @AuthenticationPrincipal PrincipalDetails principalDetails) {
+
         User userEntity = userService.editProfilePhoto(principalId, profileImageFile);
         principalDetails.setUser(userEntity); // change session
-        return new ResponseEntity<>(new CMRespDto<>(1, "Profile photo change success", null), HttpStatus.OK);
+        return new ResponseEntity<>(new CMRespDto<>(1, "Changing profile photo success", null), HttpStatus.OK);
+
     }
 
     @GetMapping("/api/user/{pageUserId}/subscribe")
