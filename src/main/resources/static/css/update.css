@@ -1,13 +1,13 @@
 @import "header.css";
 @import "footer.css";
 
-/*프로필셋팅 메인*/
+/* Profile setting main */
 .main {
   padding-top: 54px;
   background-color: #fafafa;
 }
 
-/*프로필셋팅 섹션*/
+/* Profile setting section */
 .setting-container {
   width: 935px;
   margin: 0 auto;
@@ -17,7 +17,7 @@
   border-radius: 4px;
 }
 
-/*프로필셋팅 아티클*/
+/* Profile setting article */
 .setting-container .setting__content {
   border-left: 1px solid gainsboro;
   display: flex;
@@ -26,19 +26,19 @@
   margin-right: 10%;
 }
 
-/*프로필 셋팅 내이미지 + 아이디*/
+/* Profile setting my image + id */
 .setting-container .setting__content .content-item__01 {
   display: flex;
   margin-bottom: 20px;
 }
 
-/*프로필 셋팅 요소들 박스*/
+/* Profile setting element box */
 .setting-container .setting__content form > div {
   display: flex;
   margin-bottom: 20px;
 }
 
-/* 유저이미지, 유저아이디*/
+/* User image, user id */
 .setting-container .setting__content .content-item__01 .item__img {
   flex: 2;
   text-align: right;
@@ -56,7 +56,7 @@
   font-size: 18px;
 }
 
-/*form 입력요소 타이틀*/
+/* Form input container title */
 .setting-container .setting__content div .item__title {
   flex: 2;
   padding-right: 30px;
@@ -66,14 +66,14 @@
   padding-top: 7px;
 }
 
-/*form 입력요소 인풋박스*/
+/* Form input box */
 .setting-container .setting__content div .item__input {
   flex: 4;
   display: flex;
   flex-direction: column;
 }
 
-/*form 입력요소 인풋*/
+/* Form element input */
 .setting-container .setting__content div .item__input input {
   border: 1px solid #dbdbdb;
   height: 32px;
@@ -82,7 +82,7 @@
   font-size: 16px;
 }
 
-/*form 입력요소 소개부분*/
+/* Form input element introducing */
 .setting-container .setting__content div .item__input textarea {
   border: 1px solid #dbdbdb;
   padding: 5px 10px;
@@ -90,14 +90,14 @@
   font-size: 16px;
 }
 
-/* 비즈니스나 반려동물 어쩌고*/
+/* Business or pet */
 .setting-container .setting__content div .item__input span {
   color: #8e8e8e;
   font-size: 12px;
   padding-top: 10px;
 }
 
-/*제출버튼*/
+/* Submit */
 .setting-container .setting__content .content-item__11 .item__input {
   display: flex;
   flex-direction: row;
@@ -105,7 +105,7 @@
   justify-content: space-between;
 }
 
-/*제출버튼*/
+/* Submit button */
 .setting-container .setting__content .content-item__11 .item__input button {
   border: 0;
   background-color: #0095f6;
@@ -114,5 +114,3 @@
   color: #fff;
   cursor: pointer;
 }
-
-

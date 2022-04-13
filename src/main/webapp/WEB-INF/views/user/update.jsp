@@ -3,14 +3,14 @@
 
 <%@ include file="../layout/header.jsp"%>
 
-<!--프로필셋팅 메인-->
+<!--Profile setting main-->
 <main class="main">
-	<!--프로필셋팅 섹션-->
+	<!--Profile setting section-->
 	<section class="setting-container">
-		<!--프로필셋팅 아티클-->
+		<!--Profile setting article-->
 		<article class="setting__content">
 
-			<!--프로필셋팅 아이디영역-->
+			<!--Profile setting id range-->
 			<div class="content-item__01">
 				<div class="item__img">
 					<img src="#" onerror="this.src='/images/person.jpeg'" />
@@ -19,39 +19,39 @@
 					<h2>${principal.user.username}</h2>
 				</div>
 			</div>
-			<!--프로필셋팅 아이디영역end-->
+			<!--Profile setting id range end-->
 
-			<!--프로필 수정-->
+			<!--Profile edit-->
 			<form id="profileUpdate" onsubmit="update(${principal.user.id}, event)">
 				<div class="content-item__02">
-					<div class="item__title">이름</div>
+					<div class="item__title">Name</div>
 					<div class="item__input">
-						<input type="text" name="name" placeholder="이름"
+						<input type="text" name="name" placeholder="Name"
 							value="${principal.user.name}" required="required" />
 					</div>
 				</div>
 				<div class="content-item__03">
-					<div class="item__title">유저네임</div>
+					<div class="item__title">Username</div>
 					<div class="item__input">
-						<input type="text" name="username" placeholder="유저네임"
+						<input type="text" name="username" placeholder="Username"
 							value="${principal.user.username}" readonly="readonly" />
 					</div>
 				</div>
 				<div class="content-item__04">
-					<div class="item__title">패스워드</div>
+					<div class="item__title">Password</div>
 					<div class="item__input">
-						<input type="password" name="password" placeholder="패스워드" required="required" />
+						<input type="password" name="password" placeholder="Password" required="required" />
 					</div>
 				</div>
 				<div class="content-item__05">
-					<div class="item__title">웹사이트</div>
+					<div class="item__title">Website</div>
 					<div class="item__input">
-						<input type="text" name="website" placeholder="웹 사이트"
+						<input type="text" name="website" placeholder="Website"
 							value="${principal.user.website}" />
 					</div>
 				</div>
 				<div class="content-item__06">
-					<div class="item__title">소개</div>
+					<div class="item__title">Bio</div>
 					<div class="item__input">
 						<textarea name="bio" id="" rows="3">${principal.user.bio}</textarea>
 					</div>
@@ -59,42 +59,42 @@
 				<div class="content-item__07">
 					<div class="item__title"></div>
 					<div class="item__input">
-						<span><b>개인정보</b></span> <span>비즈니스나 반려동물 등에 사용된 계정인 경우에도
-							회원님의 개인 정보를 입력하세요. 공개 프로필에는 포함되지 않습니다.</span>
+						<span><b>Privacy</b></span> <span>Enter your personal information even if the account is used for business or pets.
+							It is not included in public profiles.</span>
 					</div>
 				</div>
 				<div class="content-item__08">
-					<div class="item__title">이메일</div>
+					<div class="item__title">Email</div>
 					<div class="item__input">
-						<input type="text" name="email" placeholder="이메일"
+						<input type="text" name="email" placeholder="Email"
 							value="${principal.user.email}" readonly="readonly" />
 					</div>
 				</div>
 				<div class="content-item__09">
-					<div class="item__title">전화번호</div>
+					<div class="item__title">Phone number</div>
 					<div class="item__input">
-						<input type="text" name="phone" placeholder="전화번호"
+						<input type="text" name="phone" placeholder="Phone number"
 							value="${principal.user.phone}" />
 					</div>
 				</div>
 				<div class="content-item__10">
-					<div class="item__title">성별</div>
+					<div class="item__title">Gender</div>
 					<div class="item__input">
 						<input type="text" name="gender" value="${principal.user.gender}" />
 					</div>
 				</div>
 
-				<!--제출버튼-->
+				<!--Submit button-->
 				<div class="content-item__11">
 					<div class="item__title"></div>
 					<div class="item__input">
-						<button>제출</button>
+						<button>Submit</button>
 					</div>
 				</div>
-				<!--제출버튼end-->
+				<!--Submit button end-->
 
 			</form>
-			<!--프로필수정 form end-->
+			<!--Profile edit form end-->
 		</article>
 	</section>
 </main>

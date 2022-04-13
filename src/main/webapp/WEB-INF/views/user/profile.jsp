@@ -3,12 +3,12 @@
 
 <%@ include file="../layout/header.jsp"%>
 
-<!--프로필 섹션-->
+<!--Profile section-->
 <section class="profile">
-	<!--유저정보 컨테이너-->
+	<!--User info container-->
 	<div class="profileContainer">
 
-		<!--유저이미지-->
+		<!--User image-->
 		<div class="profile-left">
 			<div class="profile-img-wrap story-border"
 				onclick="popup('.modal-image')">
@@ -22,16 +22,16 @@
 					onerror="this.src='/images/person.jpeg'" id="userProfileImage" />
 			</div>
 		</div>
-		<!--유저이미지end-->
+		<!--User image end-->
 
-		<!--유저정보 및 사진등록 구독하기-->
+		<!--User info, upload photo, subscribe-->
 		<div class="profile-right">
 			<div class="name-group">
 				<h2>${dto.user.name}</h2>
 
 				<c:choose>
 					<c:when test="${dto.pageOwnerState}">
-						<button class="cta" onclick="location.href='/image/upload'">사진등록</button>
+						<button class="cta" onclick="location.href='/image/upload'">Upload post</button>
 					</c:when>
 					<c:otherwise>
 						<c:choose>
@@ -52,9 +52,9 @@
 
 			<div class="subscribe">
 				<ul>
-					<li><a href=""> 게시물<span>${dto.imageCount}</span>
+					<li><a href=""> Posts<span>${dto.imageCount}</span>
 					</a></li>
-					<li><a href="javascript:subscribeInfoModalOpen(${dto.user.id});"> 구독정보<span>${dto.subscribeCount}</span>
+					<li><a href="javascript:subscribeInfoModalOpen(${dto.user.id});"> Following<span>${dto.subscribeCount}</span>
 					</a></li>
 				</ul>
 			</div>
@@ -63,21 +63,21 @@
 				<h4>${dto.user.website}</h4>
 			</div>
 		</div>
-		<!--유저정보 및 사진등록 구독하기-->
+		<!--User info, upload photo, subscribe end-->
 
 	</div>
 </section>
 
-<!--게시물컨섹션-->
+<!--Post section-->
 <section id="tab-content">
-	<!--게시물컨컨테이너-->
+	<!--Post container-->
 	<div class="profileContainer">
-		<!--그냥 감싸는 div (지우면이미지커짐)-->
+		<!--Just-->
 		<div id="tab-1-content" class="tab-content-item show">
-			<!--게시물컨 그리드배열-->
+			<!--Post container, GRID-->
 			<div class="tab-1-content-inner">
 
-				<!--아이템들-->
+				<!--Items-->
 				<c:forEach var="image" items="${dto.user.images}">
 					<div class="img-box">
 						<a href=""> <img src="/upload/${image.postImageUrl}" />
@@ -88,37 +88,37 @@
 						</div>
 					</div>
 				</c:forEach>
-				<!--아이템들end-->
+				<!--Items end-->
 			</div>
 		</div>
 	</div>
 </section>
 
-<!--로그아웃, 회원정보변경 모달-->
+<!--Logout, edit user info modal-->
 <div class="modal-info" onclick="modalInfo()">
 	<div class="modal">
-		<button onclick="location.href='/user/1/update'">회원정보 변경</button>
-		<button onclick="location.href='/logout'">로그아웃</button>
-		<button onclick="closePopup('.modal-info')">취소</button>
+		<button onclick="location.href='/user/1/update'">Edit user info</button>
+		<button onclick="location.href='/logout'">Logout</button>
+		<button onclick="closePopup('.modal-info')">Cancel</button>
 	</div>
 </div>
-<!--로그아웃, 회원정보변경 모달 end-->
+<!--Logout, edit user info modal end-->
 
-<!--프로필사진 바꾸기 모달-->
+<!--Change profile photo modal-->
 <div class="modal-image" onclick="modalImage()">
 	<div class="modal">
-		<p>프로필 사진 바꾸기</p>
-		<button onclick="profileImageUpload(${dto.user.id}, ${principal.user.id})">사진 업로드</button>
-		<button onclick="closePopup('.modal-image')">취소</button>
+		<p>Change profile photo</p>
+		<button onclick="profileImageUpload(${dto.user.id}, ${principal.user.id})">Upload photo</button>
+		<button onclick="closePopup('.modal-image')">Cancel</button>
 	</div>
 </div>
 
-<!--프로필사진 바꾸기 모달end-->
+<!--Change profile photo modal end-->
 
 <div class="modal-subscribe">
 	<div class="subscribe">
 		<div class="subscribe-header">
-			<span>구독정보</span>
+			<span>Following</span>
 			<button onclick="modalClose()">
 				<i class="fas fa-times"></i>
 			</button>

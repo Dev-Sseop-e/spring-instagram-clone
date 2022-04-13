@@ -15,34 +15,34 @@
 <body>
     <div class="container">
         <main class="loginMain">
-           <!--회원가입섹션-->
+           <!--Signup session-->
             <section class="login">
                 <article class="login__form__container">
                   
-                   <!--회원가입 폼-->
+                   <!--Signup form-->
                     <div class="login__form">
-                        <!--로고-->
+                        <!--Logo-->
                         <h1><img src="/images/logo.jpg" alt=""></h1>
-                         <!--로고end-->
+                         <!--Logo end-->
                          
-                         <!--회원가입 인풋-->
+                         <!--Signup input-->
                         <form class="login__input" action="/auth/signup" method="post" >
-                            <input type="text" name="username" placeholder="유저네임" required="required" />
-                            <input type="password" name="password" placeholder="패스워드" required="required" />
-                            <input type="email" name="email" placeholder="이메일" required="required" />
-                            <input type="text" name="name" placeholder="이름" required="required" />
-                            <button>가입</button>
+                            <input type="text" name="username" placeholder="Username" required="required" />
+                            <input type="password" name="password" placeholder="Password" required="required" />
+                            <input type="email" name="email" placeholder="Email" required="required" />
+                            <input type="text" name="name" placeholder="Name" required="required" />
+                            <button>Register in</button>
                         </form>
-                        <!--회원가입 인풋end-->
+                        <!--Signup input end-->
                     </div>
-                    <!--회원가입 폼end-->
+                    <!--Signup form end-->
                     
-                    <!--계정이 있으신가요?-->
+                    <!--Do you have an account?-->
                     <div class="login__register">
-                        <span>계정이 있으신가요?</span>
-                        <a href="/auth/signin">로그인</a>
+                        <span>Do you have an account?</span>
+                        <a href="/auth/signin">Login</a>
                     </div>
-                    <!--계정이 있으신가요?end-->
+                    <!--Do you have an account? end-->
                     
                 </article>
             </section>

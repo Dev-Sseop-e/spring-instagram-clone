@@ -3,19 +3,19 @@
 <footer>
 	<div class="container">
 		<ul>
-			<li><a href="#a">소개</a></li>
-			<li><a href="#a">블로그</a></li>
-			<li><a href="#a">채용 정보</a></li>
-			<li><a href="#a">도움말</a></li>
+			<li><a href="#a">Bio</a></li>
+			<li><a href="#a">Blog</a></li>
+			<li><a href="#a">Recruitment</a></li>
+			<li><a href="#a">Help</a></li>
 			<li><a href="#a">API</a></li>
-			<li><a href="#a">개인정보처리방침</a></li>
-			<li><a href="#a">약관</a></li>
-			<li><a href="#a">인기 계정</a></li>
-			<li><a href="#a">해시태그</a></li>
-			<li><a href="#a">위치</a></li>
+			<li><a href="#a">Privacy policy</a></li>
+			<li><a href="#a">Terms</a></li>
+			<li><a href="#a">Popular account</a></li>
+			<li><a href="#a">Hash tag</a></li>
+			<li><a href="#a">Location</a></li>
 		</ul>
 		<div class="copy">
-			<p>© 2020 Photogram from There Programing</p>
+			<p>© 2022 Photogram</p>
 		</div>
 	</div>
 </footer>

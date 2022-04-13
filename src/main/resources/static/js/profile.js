@@ -1,16 +1,16 @@
 /**
-  1. 유저 프로파일 페이지
-  (1) 유저 프로파일 페이지 구독하기, 구독취소
-  (2) 구독자 정보 모달 보기
-  (3) 구독자 정보 모달에서 구독하기, 구독취소
-  (4) 유저 프로필 사진 변경
-  (5) 사용자 정보 메뉴 열기 닫기
-  (6) 사용자 정보(회원정보, 로그아웃, 닫기) 모달
-  (7) 사용자 프로파일 이미지 메뉴(사진업로드, 취소) 모달 
-  (8) 구독자 정보 모달 닫기
+  1. User profile page
+  (1) User profile page subscribe, unsubscribe
+  (2) Show subscriber information modal
+  (3) Subscribe and unsubscribe in info modal
+  (4) Changing user profile photo
+  (5) Open or close user info menu
+  (6) User information modal
+  (7) Profile image menu modal
+  (8) Close subscriber info modal
  */
 
-// (1) 유저 프로파일 페이지 구독하기, 구독취소
+// (1) User profile page subscribe, unsubscribe
 function toggleSubscribe(toUserId, obj) {
 	if ($(obj).text() === "Unfollow") {
 		$.ajax({
@@ -35,7 +35,7 @@ function toggleSubscribe(toUserId, obj) {
 	}
 }
 
-// (2) 구독자 정보  모달 보기
+// (2) Show subscriber information modal
 function subscribeInfoModalOpen(pageUserId) {
 	$(".modal-subscribe").css("display", "flex");
 	$.ajax({
@@ -53,6 +53,7 @@ function subscribeInfoModalOpen(pageUserId) {
 	});
 }
 
+// (3) Subscribe and unsubscribe in info modal
 function getSubscribeModalItem(u) {
 	let item = `<div class="subscribe__item" id="subscribeModalItem-${u.id}">
 	<div class="subscribe__img">
@@ -75,7 +76,7 @@ function getSubscribeModalItem(u) {
 	return item;
 }
 
-// (3) 유저 프로파일 사진 변경 (완)
+// (4) Changing user profile photo
 function profileImageUpload(pageUserId, principalId) {
 
 	if (pageUserId != principalId) {
@@ -121,7 +122,7 @@ function profileImageUpload(pageUserId, principalId) {
 
 }
 
-// (4) 사용자 정보 메뉴 열기 닫기
+// (5) Open or close user info menu
 function popup(obj) {
 	$(obj).css("display", "flex");
 }
@@ -130,18 +131,17 @@ function closePopup(obj) {
 	$(obj).css("display", "none");
 }
 
-
-// (5) 사용자 정보(회원정보, 로그아웃, 닫기) 모달
+// (6) User information modal
 function modalInfo() {
 	$(".modal-info").css("display", "none");
 }
 
-// (6) 사용자 프로파일 이미지 메뉴(사진업로드, 취소) 모달
+// (7) Profile image menu modal
 function modalImage() {
 	$(".modal-image").css("display", "none");
 }
 
-// (7) 구독자 정보 모달 닫기
+// (8) Close subscriber info modal
 function modalClose() {
 	$(".modal-subscribe").css("display", "none");
 	location.reload();

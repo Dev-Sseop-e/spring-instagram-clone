@@ -1,4 +1,4 @@
-/*모든요소의 기본 마진 패딩, 사이징 초기화*/
+/* Basic margin, padding and reset size */
 * {
   margin: 0;
   padding: 0;
@@ -8,13 +8,13 @@
   outline: none;
 }
 
-/*페이지의 중앙을 잡아줄 컨테이너*/
+/* Middle container */
 .container {
   width: 100%;
   min-height: 100%;
 }
 
-/*메인태그 기본정의*/
+/* Main tag */
 .loginMain {
   height: 100vh;
   display: flex;
@@ -22,12 +22,12 @@
   background-color: rgba(var(--b3f, 250, 250, 250), 1);
 }
 
-/*모든 버튼은 포인터*/
+/* All buttons are pointer */
 button {
   cursor: pointer;
 }
 
-/*로그인 섹션*/
+/* Login section */
 .login {
   width: 100%;
   max-width: 935px;
@@ -36,7 +36,7 @@ button {
   align-items: center;
 }
 
-/*로그인폼과 가입하기를 감싸는 컨테이너*/
+/* Login form, container */
 .login__form__container {
   width: 350px;
   height: 100%;
@@ -45,7 +45,7 @@ button {
   justify-content: center;
 }
 
-/*로그인폼, 가입하기 박스 디자인*/
+/* Login form, registration box design */
 .login__form,
 .login__register {
   padding: 10px 0 20px;
@@ -54,7 +54,7 @@ button {
   background-color: #fff;
 }
 
-/*로고이미지를 담을 블록요소*/
+/* Logo image container */
 .login__form h1 {
   height: 86px;
   display: flex;
@@ -62,12 +62,12 @@ button {
   justify-content: center;
 }
 
-/*로고 이미지*/
+/* Logo image */
 .login__form h1 img {
   width: 175px;
 }
 
-/*로그인 인풋박스*/
+/* Login input box */
 .login__input {
   display: flex;
   flex-direction: column;
@@ -76,7 +76,7 @@ button {
   padding: 0 40px;
 }
 
-/*로그인 인풋태그*/
+/* Login input tag */
 .login__input input {
   width: 100%;
   height: 38px;
@@ -86,7 +86,7 @@ button {
   margin-bottom: 6px;
 }
 
-/*로그인 버튼*/
+/* Login button */
 .login__input button {
   border: 0;
   outline: 0;
@@ -100,12 +100,12 @@ button {
   transition: background 0.5s;
 }
 
-/*버튼 hover 액션*/
+/* Button hover action */
 .login__input button:hover {
   background: #0f75b9;
 }
 
-/* login__horizon 붙은건 그냥 hr을 디자인한거. */
+/* login__horizon: hr design */
 .login__horizon {
   display: flex;
   margin-top: 20px;
@@ -126,12 +126,12 @@ button {
   font-size: 14px;
 }
 
-/* 페이스북로그인 영역 */
+/* Facebook login area */
 .login__facebook {
   padding: 0 40px;
   margin-top: 15px;
 }
-/*페이스북 로그인 버튼*/
+/* Facebook login button */
 .login__facebook button {
   background-color: #fff;
   width: 100%;
@@ -140,31 +140,31 @@ button {
   font-weight: 600;
   font-size: 15px;
 }
-/*페이스북 로그인 색깔*/
+/* Facebook login color */
 .login__facebook button i,
 span {
   color: #385185;
 }
 
-/*가입페이지로 이동*/
+/* Move to registration page */
 .login__register {
   margin-top: 10px;
   line-height: 60px;
   padding: 0;
 }
 
-/*계정이 없으신가요?*/
+/* Did you have account? */
 .login__register span {
   font-size: 14px;
   font-weight: 200;
 }
 
-/*가입페이지 이동버튼*/
+/* Registration button */
 .login__register a {
   color: #0095f6;
 }
 
-/* 버튼디자인 */
+/* Button design */
 .cta {
   margin-right: 10px;
   padding: 5px 9px;
@@ -175,7 +175,7 @@ span {
   background: transparent;
 }
 
-/*버튼 블루*/
+/* Blue button */
 .cta.blue {
   background: #0095f6 !important;
   color: #fff !important;

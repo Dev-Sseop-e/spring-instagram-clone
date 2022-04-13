@@ -1,5 +1,5 @@
 /**
-	2. 스토리 페이지
+	2. Story page
  	(0) Load currently login user id
 	(1) 스토리 로드하기
 	(2) 스토리 스크롤 페이징하기
@@ -11,7 +11,7 @@
 // (0) Load currently login user id
 let principalId = $("#principalId").val();
 
-// (1) 스토리 로드하기
+// (1) Load story
 let page = 0;
 
 function storyLoad() {
@@ -89,7 +89,7 @@ function getStoryItem(image) {
 		</div>
 
 		<div class="sl__item__input">
-			<input type="text" placeholder="댓글 달기..." id="storyCommentInput-${image.id}" />
+			<input type="text" placeholder="Add comment..." id="storyCommentInput-${image.id}" />
 			<button type="button" onClick="addComment(${image.id})">게시</button>
 		</div>
 
@@ -99,7 +99,7 @@ function getStoryItem(image) {
 	return item;
 }
 
-// (2) 스토리 스크롤 페이징하기
+// (2) Story scroll paging
 $(window).scroll(() => {
 	let checkNum = $(window).scrollTop() - ($(document).height() - $(window).height());
 	if(checkNum < 1 && checkNum > -1) {
@@ -108,7 +108,7 @@ $(window).scroll(() => {
 	}
 });
 
-// (3) 좋아요, 안좋아요
+// (3) Like, Unlike
 function toggleLike(imageId) {
 
 	let likeIcon = $(`#storyLikeIcon-${imageId}`);
@@ -148,7 +148,7 @@ function toggleLike(imageId) {
 	}
 }
 
-// (4) 댓글쓰기
+// (4) Add comment
 function addComment(imageId) {
 
 	let commentInput = $(`#storyCommentInput-${imageId}`);
@@ -188,7 +188,7 @@ function addComment(imageId) {
 	commentInput.val("");
 }
 
-// (5) 댓글 삭제
+// (5) Delete comment
 function deleteComment(commentId) {
 	$.ajax({
 		type: "delete",

@@ -15,46 +15,46 @@
 <body>
     <div class="container">
         <main class="loginMain">
-        <!--로그인섹션-->
+        <!--Login section-->
             <section class="login">
-               <!--로그인박스-->
+               <!--Login box-->
                 <article class="login__form__container">
-                   <!--로그인 폼-->
+                   <!--Login form-->
                    <div class="login__form">
                         <h1><img src="/images/logo.jpg" alt=""></h1>
                         
-                        <!--로그인 인풋-->
+                        <!--Login input-->
                         <form class="login__input" action="/auth/signin" method="POST" >
-                            <input type="text" name="username" placeholder="유저네임" required="required" />
-                            <input type="password" name="password" placeholder="비밀번호" required="required" />
-                            <button>로그인</button>
+                            <input type="text" name="username" placeholder="Username" required="required" />
+                            <input type="password" name="password" placeholder="Password" required="required" />
+                            <button>Login</button>
                         </form>
-                        <!--로그인 인풋end-->
+                        <!--Login input end-->
                         
-                        <!-- 또는 -->
+                        <!--OR-->
                         <div class="login__horizon">
                             <div class="br"></div>
-                            <div class="or">또는</div>
+                            <div class="or">or</div>
                             <div class="br"></div>
                         </div>
-                        <!-- 또는end -->
+                        <!--OR end-->
                         
-                        <!-- Oauth 소셜로그인 -->
+                        <!--Oauth social login-->
                         <div class="login__facebook">
                             <button onclick="javascript:location.href='/oauth2/authorization/facebook'">
                                 <i class="fab fa-facebook-square"></i>
                                 <span>Login by Facebook</span>
                             </button>
                         </div>
-                        <!-- Oauth 소셜로그인end -->
+                        <!--Oauth social login end-->
                     </div>
                     
-                    <!--계정이 없으신가요?-->
+                    <!--Don't you have an account?-->
                     <div class="login__register">
-                        <span>계정이 없으신가요?</span>
-                        <a href="/auth/signup">가입하기</a>
+                        <span>Don't you have an account?</span>
+                        <a href="/auth/signup">Register in</a>
                     </div>
-                    <!--계정이 없으신가요?end-->
+                    <!--Don't you have an account? end-->
                 </article>
             </section>
         </main>

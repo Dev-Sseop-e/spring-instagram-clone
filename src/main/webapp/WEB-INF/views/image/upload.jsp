@@ -3,38 +3,38 @@
 	
 	<%@ include file="../layout/header.jsp" %>
 
-    <!--사진 업로드페이지 중앙배치-->
+    <!--Center photo upload page-->
         <main class="uploadContainer">
-           <!--사진업로드 박스-->
+           <!--Photo upload box-->
             <section class="upload">
                
-               <!--사진업로드 로고-->
+               <!--Photo upload logo-->
                 <div class="upload-top">
                     <a href="home.html" class="">
                         <img src="/images/logo.jpg" alt="">
                     </a>
-                    <p>사진 업로드</p>
+                    <p>Upload photo</p>
                 </div>
-                <!--사진업로드 로고 end-->
+                <!--Photo upload logo end-->
                 
-                <!--사진업로드 Form-->
+                <!--Photo upload Form-->
                 <form class="upload-form" action="/image" method="post" enctype="multipart/form-data" >
                     <input  type="file" name="file"  onchange="imageChoose(this)" />
                     <div class="upload-img">
                         <img src="/images/person.jpeg" alt="" id="imageUploadPreview" />
                     </div>
                     
-                    <!--사진설명 + 업로드버튼-->
+                    <!--Photo description + upload button-->
                     <div class="upload-form-detail">
-                   		 <input type="text" placeholder="사진설명" name="caption" />
-                        <button class="cta blue">업로드</button>
+                   		 <input type="text" placeholder="Photo description" name="caption" />
+                        <button class="cta blue">Upload</button>
                     </div>
-                    <!--사진설명end-->
+                    <!--Photo description end-->
                     
                 </form>
-                <!--사진업로드 Form-->
+                <!--Photo upload Form end-->
             </section>
-            <!--사진업로드 박스 end-->
+            <!--Photo upload box end-->
         </main>
         <br/><br/>
 	

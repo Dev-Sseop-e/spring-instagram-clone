@@ -4,10 +4,10 @@
 
 <main class="main">
 	<section class="container">
-		<!--전체 리스트 시작-->
+		<!--Total list start-->
 		<article class="story-list" id="storyList">
 
-			<!--전체 리스트 아이템-->
+			<!--Total list item-->
 
 		</article>
 	</section>
