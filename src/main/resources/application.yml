@@ -35,6 +35,14 @@ spring:
     user:
       name: test
       password: 1234
-
+    oauth2:
+      client:
+        registration:
+          facebook:
+            client-id: 381048883898293
+            client-secret: 8fe86d95e1c7649e99b0548c115fa781
+            scope:
+              - public_profile
+              - email
 file:
   path: C:/Users/01/Desktop/seop/upload/

@@ -22,7 +22,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Strategy of increasing number follow the DB
     private int id;
 
-    @Column(unique = true)
+    @Column(length = 100, unique = true)
     private String username;
     @Column(nullable = false)
     private String password;
