@@ -2,7 +2,6 @@ package com.cos.photogram.web;
 
 import com.cos.photogram.domain.message.Message;
 import lombok.RequiredArgsConstructor;
-import org.aspectj.bridge.IMessage;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
