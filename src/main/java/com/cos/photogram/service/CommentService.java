@@ -21,7 +21,7 @@ public class CommentService {
     public Comment addCmt(String content, int imageId, int userId) {
 
         // when making object, insert id only
-        // therefore, it just return image and user objects which have only id value
+        // therefore, it just returns image and user objects which have only id value
         Image image = new Image();
         image.setId(imageId);
 
