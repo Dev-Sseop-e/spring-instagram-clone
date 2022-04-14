@@ -34,7 +34,7 @@ public class Likes {
     @ManyToOne
     private Image image;
 
-    @JsonIgnoreProperties({"images"}) // Protect infinite recursion
+    @JsonIgnoreProperties({"images"}) // prevent infinite recursion
     @JoinColumn(name="userId")
     @ManyToOne
     private User user;

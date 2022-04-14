@@ -46,7 +46,7 @@ public class User {
     //       instead, take images when getImages() function's images are called
     // EAGER: take all images in an User id when selecting User by Joining them
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-    @JsonIgnoreProperties({"user"}) // protect infinite recursion
+    @JsonIgnoreProperties({"user"}) // prevent infinite recursion
     private List<Image> images;
 
     private LocalDateTime createDate;
